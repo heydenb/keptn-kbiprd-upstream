@@ -16,14 +16,14 @@ objectives:
       - criteria:
           - "<=10"
     weight: 3
-  - sli: "jmeter_web_response_time_p50"
+  - sli: "jmeter_web_response_time_p50" #in microseconds
     pass:             # pass if (relative change <= 10% AND absolute value is < 1000ms)
       - criteria:
           - "<=+20%"
-          - "<1000"
+          - "<1000000"
     warning:          # if the response time is below 1200ms, the result should be a warning
       - criteria:
-          - "<=1200"
+          - "<=1200000"
   - sli: "web_response_time_p50"
   - sli: "web_response_time_p90"
   - sli: "web_response_time_p95"
